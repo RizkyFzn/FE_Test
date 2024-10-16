@@ -23,10 +23,9 @@ const Login = () => {
           });
     };
 
-    // Function to handle key down events
     const handleKeyDown = (e) => {
         if (e.key === 'Enter') {
-            handleLogin(e); // Call handleLogin when Enter is pressed
+            handleLogin(e);
         }
     };
 
@@ -46,7 +45,7 @@ const Login = () => {
                                 placeholder=" "
                                 value={username}
                                 onChange={(e) => setUsername(e.target.value)}
-                                onKeyDown={handleKeyDown} // Add this line
+                                onKeyDown={handleKeyDown}
                                 required
                             />
                             <label htmlFor="username" className="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">Username</label>
@@ -59,7 +58,7 @@ const Login = () => {
                                 placeholder=" "
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
-                                onKeyDown={handleKeyDown} // Add this line
+                                onKeyDown={handleKeyDown}
                                 required
                             />
                             <label htmlFor="pass" className="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">Password</label>

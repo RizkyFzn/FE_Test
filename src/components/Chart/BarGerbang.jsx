@@ -6,13 +6,12 @@ Chart.register(...registerables);
 
 const BarGerbang = () => {
   const barChartRef = useRef(null);
-  const { data } = useSelector((state) => state.lalins); // Ambil data dari store
+  const { data } = useSelector((state) => state.lalins);
 
   useEffect(() => {
     
     if (!data || data.length === 0) return;
 
-    // Inisialisasi data chart
     const barData = {
       labels: ['Gerbang 1', 'Gerbang 2', 'Gerbang 3', 'Gerbang 4', 'Gerbang 5'],
       datasets: [

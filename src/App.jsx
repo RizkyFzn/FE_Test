@@ -2,7 +2,7 @@
 import { useEffect } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { logout, setUser } from './store/auth'; // Ganti dengan path yang sesuai
+import { logout, setUser } from './store/auth';
 import './App.css';
 import Login from './views/LoginPage';
 import Dashboard from './views/Dashboard';
@@ -15,11 +15,10 @@ function App() {
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
-      // Jika ada token, set user
       axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-      dispatch(setUser({ token })); // Anda dapat menyimpan data user di sini jika ada
+      dispatch(setUser({ token }));
     } else {
-      dispatch(logout()); // Logout jika token tidak ada
+      dispatch(logout());
     }
   }, [dispatch]);
 

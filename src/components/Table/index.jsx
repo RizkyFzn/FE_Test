@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { deleteGerbang, updateGerbang, createGerbang, fetchGerbangData } from '../../store/gerbang';
 import Modal from 'react-modal';
 
-// Set elemen root untuk modal
 Modal.setAppElement('#root');
 
 const DataTableComponent = () => {
@@ -68,8 +67,8 @@ const DataTableComponent = () => {
   };
 
   const handleEdit = (row) => {
-    setEditGerbang(row); // Set the selected gerbang to edit
-    setIsEditModalOpen(true); // Open the edit modal
+    setEditGerbang(row);
+    setIsEditModalOpen(true);
   };
 
   const handleSaveEdit = () => {
@@ -111,7 +110,6 @@ const DataTableComponent = () => {
         highlightOnHover
       />
 
-      {/* Modal untuk menambah gerbang */}
       <Modal
         isOpen={isModalOpen}
         onRequestClose={() => setIsModalOpen(false)}
@@ -120,7 +118,7 @@ const DataTableComponent = () => {
         overlayClassName="fixed inset-0 bg-black bg-opacity-50"
       >
         <h2 className="text-lg font-semibold mb-4">Tambah Gerbang Baru</h2>
-        {/* Form fields for new gerbang */}
+        
         <div className="mb-4">
           <label className="block text-sm font-medium text-gray-700">ID Gerbang:</label>
           <input
@@ -163,7 +161,6 @@ const DataTableComponent = () => {
         </div>
       </Modal>
 
-      {/* Modal untuk edit gerbang */}
       <Modal
         isOpen={isEditModalOpen}
         onRequestClose={() => setIsEditModalOpen(false)}
@@ -172,7 +169,7 @@ const DataTableComponent = () => {
         overlayClassName="fixed inset-0 bg-black bg-opacity-50"
       >
         <h2 className="text-lg font-semibold mb-4">Edit Gerbang</h2>
-        {/* Form fields for editing gerbang */}
+        
         <div className="mb-4">
           <label className="block text-sm font-medium text-gray-700">ID Gerbang:</label>
           <input

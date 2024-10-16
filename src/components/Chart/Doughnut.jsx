@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from 'react';
 import { Chart, registerables } from 'chart.js';
 import { useSelector } from 'react-redux';
 
-// Mendaftar semua elemen yang diperlukan
 Chart.register(...registerables);
 
 const DoughnutChart = () => {

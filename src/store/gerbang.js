@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-// Aksi untuk mengambil data gerbang
 export const fetchGerbangData = createAsyncThunk(
   'gerbang/fetchGerbangData',
   async () => {
@@ -24,7 +23,7 @@ export const updateGerbang = createAsyncThunk(
   'gerbang/updateGerbang',
   async (gerbang) => {
     const response = await axios.put(`http://localhost:8080/api/gerbangs/`, gerbang);
-    return response.data; // Pastikan ini mengembalikan data terbaru dari server
+    return response.data;
   }
 );
 
@@ -32,7 +31,7 @@ export const createGerbang = createAsyncThunk(
   'gerbang/createGerbang',
   async (gerbang) => {
     const response = await axios.post(`http://localhost:8080/api/gerbangs`, gerbang);
-    return response.data; // Pastikan ini mengembalikan data terbaru dari server
+    return response.data;
   }
 );
 
@@ -51,7 +50,7 @@ const gerbangSlice = createSlice({
       })
       .addCase(fetchGerbangData.fulfilled, (state, action) => {
         state.loading = false;
-        state.data = action.payload.data.rows.rows; // Pastikan ini sesuai dengan struktur data
+        state.data = action.payload.data.rows.rows;
       })
       .addCase(fetchGerbangData.rejected, (state, action) => {
         state.loading = false;
